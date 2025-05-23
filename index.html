@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sessão 24 – Limehouse Blues (Aleatório)</title>
+  <script>
+    const arquivos = [
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450260", // Ato 1.0
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450261", // Ato 1.1
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450262", // Ato 1.2
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450263", // Ato 1.3
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450264", // Ato 1.4
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450265", // Ato 1.5
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450266", // Ato 1.6
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450267", // Ato 1.7
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450268", // Ato 1.8
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450269", // Ato 1.9
+      "https://onedrive.live.com/download?resid=54B941C43A701BFE!450270"  // Ato 1.10
+    ];
+
+    const pesos = [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // Ato 1.0 com 50%, os demais com 5%
+
+    function escolherComPeso(items, pesos) {
+      const total = pesos.reduce((a, b) => a + b, 0);
+      const rand = Math.random() * total;
+      let acumulado = 0;
+      for (let i = 0; i < items.length; i++) {
+        acumulado += pesos[i];
+        if (rand < acumulado) return items[i];
+      }
+    }
+
+    const escolha = escolherComPeso(arquivos, pesos);
+    window.location.href = escolha;
+  </script>
+</head>
+<body>
+  <p>Redirecionando para a versão da sessão...</p>
+</body>
+</html>
