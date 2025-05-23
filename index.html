@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sessão 24 – Limehouse Blues (Aleatório)</title>
+  <script>
+    const arquivos = ['https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.0.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.1.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.2.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.3.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.4.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.5.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.6.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.7.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.8.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.9.pdf', 'https://github.com/genevewow/sessao24-limehouseblues/raw/main/Sessao24-Ato1.10.pdf'];
+
+    const pesos = [10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // Ato 1.0 com 50%, os demais com 5%
+
+    function escolherComPeso(items, pesos) {
+      const total = pesos.reduce((a, b) => a + b, 0);
+      const rand = Math.random() * total;
+      let acumulado = 0;
+      for (let i = 0; i < items.length; i++) {
+        acumulado += pesos[i];
+        if (rand < acumulado) return items[i];
+      }
+    }
+
+    const escolha = escolherComPeso(arquivos, pesos);
+    window.location.href = escolha;
+  </script>
+</head>
+<body>
+  <p>Redirecionando para a versão da sessão...</p>
+</body>
+</html>
